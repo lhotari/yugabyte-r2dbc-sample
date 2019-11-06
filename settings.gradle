@@ -1,0 +1,3 @@
+rootProject.name = 'yugabyte-r2dbc-sample'
+include 'yugabyte-testcontainers'
+include 'spring-dbcontainers'

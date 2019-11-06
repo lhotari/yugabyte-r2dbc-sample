@@ -1,0 +1,11 @@
+= Spring Boot R2DBC Example using R2DBC Repositories with YugaByte
+
+Start the application to run the WebFlux server at http://localhost:8080.
+
+```
+./gradlew bootRun
+```
+
+Uses https://github.com/lhotari/dbcontainers and  https://www.testcontainers.org/[TestContainers] to start an embedded YugaByte.
+
+
