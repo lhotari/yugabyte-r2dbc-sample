@@ -4,7 +4,8 @@ import com.github.lhotari.spring.dbcontainers.YugaByteSpringTestContextInitializ
 import io.r2dbc.postgresql.codec.Json;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.r2dbc.core.DatabaseClient;
 import org.springframework.data.r2dbc.mapping.SettableValue;
@@ -12,12 +13,13 @@ import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.test.context.ContextConfiguration;
 import reactor.test.StepVerifier;
 
-@SpringBootTest(classes = UsageSampleTest.TestApplication.class)
+@SpringBootTest
 @ContextConfiguration(initializers = YugaByteSpringTestContextInitializer.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class UsageSampleTest {
-    @SpringBootApplication
-    static class TestApplication {
+    @SpringBootConfiguration
+    @EnableAutoConfiguration
+    static class TestSpringConfiguration {
 
     }
 
